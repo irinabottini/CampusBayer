@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#00aeef" />
+    <title>Campus Bayer</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegación principal">
+        <div class="brand-block">
+          <img src="CampusBayer_Logo.jpeg" alt="Campus Bayer" class="brand-logo" />
+          <div class="user-pill" id="userPill" hidden></div>
+        </div>
+
+        <nav class="nav-list" id="navList" aria-label="Secciones"></nav>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <img src="CampusBayer_Logo.jpeg" alt="Campus Bayer" class="topbar-logo" />
+          <button class="ghost-button" id="logoutButton" type="button" hidden>Cambiar CWID</button>
+        </header>
+
+        <section class="login-view" id="loginView">
+          <div class="login-panel">
+            <img src="CampusBayer_Logo.jpeg" alt="Campus Bayer" class="login-logo" />
+            <h1>Ingreso a Campus Bayer</h1>
+            <p>Ingresá tu CWID para identificar tu rol y cargar las secciones disponibles.</p>
+            <form id="loginForm" class="login-form">
+              <label for="cwidInput">CWID</label>
+              <div class="input-row">
+                <input id="cwidInput" name="cwid" type="text" autocomplete="username" placeholder="CWID" required />
+                <button type="submit">Ingresar</button>
+              </div>
+              <p class="form-message" id="formMessage" role="alert"></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="content-view" id="contentView" hidden>
+          <div class="section-heading">
+            <p id="roleLabel"></p>
+            <h1 id="sectionTitle"></h1>
+          </div>
+          <div class="section-content" id="sectionContent"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
